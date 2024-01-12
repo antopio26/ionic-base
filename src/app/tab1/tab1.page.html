@@ -14,15 +14,19 @@
     <ion-item>
       <ion-input label="Cognome" placeholder=""></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="maxAge" label="Massima età" type="number" placeholder=""></ion-input>
+    </ion-item>
     
     <ion-item>
-      <ion-range labelPlacement="start" label="Età">
-        <div slot="end"> 10 </div>
+      <ion-range [(ngModel)]="age" [max]="maxAge" labelPlacement="start" label="Età">
+        <div slot="end"> {{age}} </div>
       </ion-range>
     </ion-item>
 
     <ion-item>
-      <ion-range labelPlacement="start" label="Anno di Nascita"></ion-range>
+      <ion-input [(ngModel)]="age" label="Età" placeholder=""></ion-input>
     </ion-item>
 
   </ion-list>
