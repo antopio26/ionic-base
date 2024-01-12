@@ -8,17 +8,11 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item>
-      <ion-input label="Nome" placeholder="Es. Giovanni"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input label="Cognome" placeholder=""></ion-input>
-    </ion-item>
-
+    
     <ion-item>
       <ion-input [(ngModel)]="maxAge" label="Massima età" type="number" placeholder=""></ion-input>
     </ion-item>
-    
+
     <ion-item>
       <ion-range [(ngModel)]="age" [max]="maxAge" labelPlacement="start" label="Età">
         <div slot="end"> {{age}} </div>
@@ -30,6 +24,25 @@
     </ion-item>
 
   </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let name of names">
+      {{name}}
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="age >= 18">
+    <h1> Hai più di 18 anni!</h1>
+
+    <ion-list>
+      <ion-item>
+        <ion-input label="Nome" placeholder="Es. Giovanni"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Cognome" placeholder=""></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
 
   <ion-button expand="full">Conferma</ion-button>
 </ion-content>
